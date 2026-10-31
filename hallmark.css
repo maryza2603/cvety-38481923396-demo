@@ -1,0 +1,64 @@
+/* Hallmark · macrostructure: Poster banner (как обложка их ВК: крупные капсы, бордо + ярко-розовый) · theme: custom (светло-розовый, бордо, малина) · anchor hue: малина */
+:root {
+  --c-canvas: #fdeef3; --c-surface: #ffffff; --c-ink: #4b1231; --c-ink-soft: #84546c;
+  --c-accent: #e8467c; --c-accent-ink: #ffffff; --c-accent-deep: #c82a63;
+  --f-display: "Montserrat", "Segoe UI", system-ui, sans-serif; --f-text: "Inter", "Segoe UI", system-ui, sans-serif;
+  --hair: rgba(75, 18, 49, .14); --r: 22px; --tint: #fbd6e3; --shadow: 0 28px 56px -34px rgba(200, 42, 99, .6); --h1k: 1;
+}
+body { font-family: var(--f-text); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -.01em; line-height: 1.04; text-transform: uppercase; }
+.s-btn { border-radius: 14px; background: linear-gradient(135deg, #ff74a3, var(--c-accent)); border: 0; font-weight: 700; box-shadow: 0 14px 28px -16px rgba(200, 42, 99, .8); }
+.s-btn--ghost { background: #fff; color: var(--c-ink); box-shadow: none; border: 1px solid var(--hair); }
+.s-bar { background: color-mix(in srgb, var(--c-canvas) 92%, transparent); border-bottom: 1px solid var(--hair); }
+.s-bar__brand { font-family: var(--f-display); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .95rem; color: var(--c-ink); }
+.s-bar__brand i { background: var(--c-ink); width: 1.7em; height: 1.7em; border: 3px solid #fff; box-shadow: 0 0 0 2px var(--c-ink); }
+.s-bar__tel { color: var(--c-accent-deep); }
+
+/* первый экран: плакат, телефон и адрес в розовых плашках */
+.s-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 430px); padding-top: clamp(32px, 5vw, 64px); }
+.s-hero::before { content: ""; position: absolute; z-index: -2; top: 0; bottom: 0; left: calc(50% - 50vw); width: 100vw; background: radial-gradient(900px 480px at 85% 10%, #ffc3d6, transparent 60%), linear-gradient(180deg, #fff3f7, var(--c-canvas)); }
+.s-hero__bg { display: none; }
+.s-eyebrow { color: var(--c-ink); background: #fff; border: 2px solid var(--c-ink); border-radius: 999px; padding: 6px 16px; letter-spacing: .12em; }
+.s-hero h1 { font-size: clamp(2.3rem, 5.2vw, 4.6rem); color: var(--c-ink); }
+.s-hero h1 b { color: var(--c-accent); font-weight: 800; }
+.hm-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
+.hm-pill { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; background: #fff; color: var(--c-ink); font: 700 .95rem var(--f-display); letter-spacing: .02em; box-shadow: 0 10px 22px -18px rgba(75, 18, 49, .8); }
+.hm-pill--phone { background: linear-gradient(135deg, #ff74a3, var(--c-accent)); color: #fff; font-size: 1.25rem; }
+.s-lead { color: var(--c-ink-soft); }
+.s-ticks li::before { background: var(--c-accent); border-radius: 6px; }
+.s-hero__photo img { aspect-ratio: 16 / 10; border: 6px solid #fff; border-radius: 26px; box-shadow: var(--shadow); }
+.s-hero__widget { top: 84px; }
+.s-widget { border: 2px solid var(--c-ink); border-radius: var(--r); box-shadow: 8px 8px 0 var(--c-ink); background: #fff; }
+.s-widget__title { font-size: 1.15rem; }
+.s-chip { border-radius: 12px; border-width: 2px; }
+.s-chip:has(input:checked) { background: var(--tint); border-color: var(--c-accent); }
+.s-bubble { border-radius: 14px; background: #fff0f5; border: 2px dashed var(--c-accent); margin-left: 0; }
+.s-total b { color: var(--c-accent-deep); font-family: var(--f-display); font-weight: 800; }
+
+/* секции: капсы, плотные плитки, ярко-розовые цифры */
+.s-section { padding-top: clamp(64px, 9vw, 112px); }
+.s-section__head h2 { font-size: clamp(1.8rem, 3.8vw, 3rem); }
+.s-board__row { border: 0; background: #fff; border-radius: 16px; padding: 16px 20px; margin-bottom: 10px; box-shadow: 0 14px 30px -26px rgba(75, 18, 49, .7); }
+.s-board__dots { display: none; }
+.s-board__name { flex: 1; font-weight: 700; }
+.s-board__price { color: var(--c-accent-deep); font-family: var(--f-display); font-weight: 800; font-size: 1.25rem; }
+.s-steps__item { border: 0; border-radius: var(--r); background: #fff; box-shadow: 0 18px 38px -30px rgba(75, 18, 49, .7); }
+.s-steps__item:nth-child(odd) { background: var(--c-ink); color: #fff; }
+.s-steps__item:nth-child(odd) p { color: #e3bfd0; }
+.s-steps__n { width: auto; height: auto; background: none; border-radius: 0; color: var(--c-accent); font: 800 3rem/1 var(--f-display); }
+.s-photos img { border: 6px solid #fff; border-radius: 22px; box-shadow: var(--shadow); }
+.s-promises li { border: 0; border-top: 0; border-radius: var(--r); background: #fff; box-shadow: 0 18px 38px -30px rgba(75, 18, 49, .7); border-left: 8px solid var(--c-accent); }
+.s-promises h3 { font-size: 1.05rem; }
+.s-reviews li { border: 0; border-radius: var(--r); background: #fff; box-shadow: 0 18px 38px -30px rgba(75, 18, 49, .7); }
+.s-reviews li:nth-child(2) { background: var(--c-ink); color: #fff; }
+.s-reviews li:nth-child(2) .s-reviews__who { color: #e3bfd0; }
+.s-reviews__stars::after { color: var(--c-accent); }
+.s-faq details { border: 2px solid var(--c-ink); border-radius: 14px; background: #fff; }
+.s-faq summary { text-transform: uppercase; letter-spacing: .02em; font-size: .92rem; }
+.s-contacts { background: var(--c-ink); color: #fff; border-radius: 28px; }
+.s-contacts dt { color: #e3bfd0; }
+.s-contacts .s-btn--ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .35); }
+.s-foot { border-top-color: var(--hair); }
+
+@media (max-width: 960px) { .s-hero { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) { .hm-pill--phone { font-size: 1.05rem; } .s-hero h1 { font-size: clamp(2rem, 9.5vw, 2.8rem); } }
